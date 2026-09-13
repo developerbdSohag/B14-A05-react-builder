@@ -5,7 +5,9 @@ const badgeColorMap = {
   Versatile: 'bg-emerald-50 text-emerald-600 border-emerald-200',
   Fast: 'bg-orange-50 text-orange-600 border-orange-200',
   'SSR / Edge': 'bg-purple-50 text-purple-600 border-purple-200',
+  Fullstack: 'bg-pink-50 text-pink-600 border-pink-200',
   Standard: 'bg-green-50 text-green-600 border-green-200',
+  Minimal: 'bg-rose-50 text-rose-600 border-rose-200',
   'Top SQL': 'bg-blue-50 text-blue-600 border-blue-200',
   Cache: 'bg-rose-50 text-rose-600 border-rose-200',
   Ubiquitous: 'bg-amber-50 text-amber-700 border-amber-200',
@@ -20,17 +22,15 @@ export default function TechCard({ tech, isAdded, onAdd }) {
 
   return (
     <div
-    className={`group bg-white rounded-2xl p-5 border flex flex-col justify-between
-                transition-all duration-300 ease-out cursor-pointer
-                hover:-translate-y-2 hover:shadow-lg active:translate-y-0 ${
-                isAdded
-                    ? 'border-[#db2777] ring-2 ring-[#db2777]/30 shadow-md shadow-pink-500/10 bg-pink-50/20'
-                    : 'border-slate-200/80 hover:border-slate-300'
-                }`}
+      className={`group rounded-2xl p-5 border flex flex-col justify-between transition-all duration-300 ease-out ${
+        isAdded
+          ? 'bg-[#fff5f7]/60 border-[#f43f5e]/40 cursor-not-allowed'
+          : 'bg-white border-slate-200/80 hover:border-slate-300 hover:-translate-y-1 hover:shadow-md cursor-pointer'
+      }`}
     >
       <div>
         <div className="flex items-start justify-between">
-          <div className="w-10 h-10 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+          <div className="w-10 h-10 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
             <img src={tech.icon} alt={tech.name} className="w-9 h-9 object-contain drop-shadow-xs" />
           </div>
 
@@ -57,10 +57,10 @@ export default function TechCard({ tech, isAdded, onAdd }) {
         <button
           onClick={() => onAdd(tech)}
           disabled={isAdded}
-          className={`w-full mt-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 select-none cursor-pointer ${
+          className={`w-full mt-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 select-none flex items-center justify-center gap-1.5 ${
             isAdded
-              ? 'bg-slate-100 text-slate-400 cursor-not-allowed'
-              : 'bg-[#0b0f19] hover:bg-slate-800 text-white shadow-xs active:scale-95'
+              ? 'bg-[#fce7f3]/60 text-[#db2777] border border-[#fbcfe8] cursor-not-allowed'
+              : 'bg-[#0b0f19] hover:bg-slate-800 text-white shadow-xs cursor-pointer active:scale-95'
           }`}
         >
           {isAdded ? '✓ Added to Stack' : 'Add to Stack'}
