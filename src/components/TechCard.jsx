@@ -24,8 +24,8 @@ export default function TechCard({ tech, isAdded, onAdd }) {
     <div
       className={`group rounded-2xl p-5 border flex flex-col justify-between transition-all duration-300 ease-out ${
         isAdded
-          ? 'bg-[#fff5f7]/60 border-[#f43f5e]/40 cursor-not-allowed'
-          : 'bg-white border-slate-200/80 hover:border-slate-300 hover:-translate-y-1 hover:shadow-md cursor-pointer'
+          ? 'bg-[#fff5f7]/60 border-[#f43f5e]/40 shadow-xs cursor-default'
+          : 'bg-white border-slate-200/80 hover:border-slate-300 hover:-translate-y-1 hover:shadow-md cursor-default'
       }`}
     >
       <div>
@@ -34,17 +34,17 @@ export default function TechCard({ tech, isAdded, onAdd }) {
             <img src={tech.icon} alt={tech.name} className="w-9 h-9 object-contain drop-shadow-xs" />
           </div>
 
-          <span className={`text-xs px-3 py-0.5 rounded-full font-medium border tracking-wide ${badgeStyle}`}>
+          <span className={`text-xs px-3 py-0.5 rounded-full font-medium border tracking-wide select-none ${badgeStyle}`}>
             {tech.badge}
           </span>
         </div>
 
         <h3 className="text-[17px] font-bold text-slate-900 mt-4 tracking-tight">{tech.name}</h3>
-        <p className="text-slate-500 text-xs mt-1.5 leading-relaxed line-clamp-3">{tech.description}</p>
+        <p className="text-slate-500 text-xs mt-1.5 leading-relaxed line-clamp-3 select-none">{tech.description}</p>
       </div>
 
       <div className="mt-6">
-        <div className="flex items-center justify-between text-xs text-slate-500 pb-3.5 border-b border-slate-100">
+        <div className="flex items-center justify-between text-xs text-slate-500 pb-3.5 border-b border-slate-100 select-none">
           <span className="bg-slate-100 text-slate-600 px-2.5 py-0.5 rounded-md font-medium">{tech.category}</span>
           <span className="font-normal text-slate-500">{tech.difficulty}</span>
 
