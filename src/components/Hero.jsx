@@ -3,11 +3,20 @@ import { useState } from 'react';
 export default function Hero() {
   const [activeBtn, setActiveBtn] = useState('explore');
 
+  const scrollToTechnologies = (e) => {
+    e.preventDefault();
+    setActiveBtn('explore');
+    const element = document.getElementById('technologies');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const primaryStyles =
-    'text-white bg-linear-to-r from-[#f95724] to-[#e62e7b] shadow-md shadow-pink-500/20 hover:opacity-95 hover:shadow-lg hover:shadow-pink-500/30 hover:-translate-y-0.5';
+    'text-white bg-linear-to-r from-[#f95724] to-[#e62e7b] shadow-md shadow-pink-500/20 hover:opacity-95 hover:shadow-lg hover:shadow-pink-500/30 hover:-translate-y-0.5 cursor-pointer';
 
   const secondaryStyles =
-    'text-[#475569] bg-white border border-[#e2e8f0] shadow-xs hover:bg-slate-50 hover:text-slate-900 hover:border-slate-300 hover:-translate-y-0.5';
+    'text-[#475569] bg-white border border-[#e2e8f0] shadow-xs hover:bg-slate-50 hover:text-slate-900 hover:border-slate-300 hover:-translate-y-0.5 cursor-pointer';
 
   return (
     <section id="home" className="max-w-7xl mx-auto px-6 sm:px-8 pt-12 pb-16">
@@ -24,11 +33,10 @@ export default function Hero() {
             Explore frontend, backend, database, and tooling options, compare them side by side, and put together the stack that fits your next project.
           </p>
 
-          {/* Action Buttons */}
           <div className="mt-8 flex flex-wrap items-center gap-3.5">
             <a
               href="#technologies"
-              onClick={() => setActiveBtn('explore')}
+              onClick={scrollToTechnologies}
               className={`px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-200 ease-out select-none active:scale-95 flex items-center justify-center ${
                 activeBtn === 'explore' ? primaryStyles : secondaryStyles
               }`}

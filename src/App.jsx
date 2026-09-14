@@ -54,7 +54,7 @@ export default function App() {
       <Navbar />
       <Hero />
 
-      <main className="max-w-7xl mx-auto px-6 py-8 grow w-full">
+      <main id="technologies" className="max-w-7xl mx-auto px-6 py-8 grow w-full scroll-mt-20">
           <div className="mb-8">
             <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-[#0f172a]">
               Explore the <span className="text-[#db2777]">Technologies</span>
