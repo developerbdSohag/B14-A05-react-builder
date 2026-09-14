@@ -47,6 +47,21 @@ const techThemeMap = {
     bg: 'bg-[#dc382d]/5',
     btn: 'bg-[#dc382d]/10 text-[#dc2626] border-[#dc382d]/30',
   },
+  JavaScript: {
+    border: 'border-[#f7df1e] ring-1 ring-[#f7df1e]/40 shadow-amber-300/10',
+    bg: 'bg-[#f7df1e]/5',
+    btn: 'bg-[#fef9c3] text-[#a16207] border-[#fde047]',
+  },
+  TypeScript: {
+    border: 'border-[#3178c6] ring-1 ring-[#3178c6]/30 shadow-[#3178c6]/10',
+    bg: 'bg-[#3178c6]/5',
+    btn: 'bg-[#3178c6]/10 text-[#1d4ed8] border-[#3178c6]/30',
+  },
+  'Tailwind CSS': {
+    border: 'border-[#38bdf8] ring-1 ring-[#38bdf8]/30 shadow-sky-400/10',
+    bg: 'bg-[#38bdf8]/5',
+    btn: 'bg-[#38bdf8]/10 text-[#0284c7] border-[#38bdf8]/30',
+  },
   Docker: {
     border: 'border-[#2496ed] ring-1 ring-[#2496ed]/30 shadow-[#2496ed]/10',
     bg: 'bg-[#2496ed]/5',
